@@ -57,9 +57,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'djnew1.urls'
+ROOT_URLCONF = 'vanmaanen_us_server.urls'
 
-WSGI_APPLICATION = 'djnew1.wsgi.application'
+WSGI_APPLICATION = 'vanmaanen_us_server.wsgi.application'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),

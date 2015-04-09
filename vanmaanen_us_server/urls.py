@@ -22,12 +22,12 @@ router.register(r'resume/exp_cats', ExperienceCategoryViewSet)
 router.register(r'resume/education', EducationViewSet)
 router.register(r'resume/courses', CourseViewSet)
 router.register(r'projects/projects', ProjectViewSet)
-router.register(r'projects/tags', ProjectTagViewSet)
+router.register(r'projects/tags', ProjectTagViewSet, base_name='proj_tags')
 router.register(r'projects/links', LinkViewSet)
 router.register(r'projects/screens', ScreenshotViewSet)
 router.register(r'misc/images',ImageViewSet)
 router.register(r'misc/text',TextViewSet)
-router.register(r'misc/categories',MiscCategoryViewSet)
+router.register(r'misc/categories',MiscCategoryViewSet,base_name='misc_cat')
 
 urlpatterns = patterns('',
     # Examples:
