@@ -6,6 +6,7 @@ from rest_framework import routers
 from blog.views import PostPubViewSet,PostPrivViewSet, TagViewSet, CategoryViewSet, UserViewSet, CommentViewSet, BlogImageViewSet
 from resume.views import ExperienceViewSet,SkillViewSet, SkillLevelViewSet, ExperienceCategoryViewSet, EducationViewSet, CourseViewSet
 from projects.views import ProjectViewSet,ProjectTagViewSet, LinkViewSet, ScreenshotViewSet
+from misc.views import ImageViewSet, TextViewSet, MiscCategoryViewSet
 router = routers.DefaultRouter()
 router.register(r'blog/posts', PostPubViewSet,base_name='post')
 router.register(r'blog/posts_admin', PostPrivViewSet,base_name='post-priv')
@@ -24,6 +25,10 @@ router.register(r'projects/projects', ProjectViewSet)
 router.register(r'projects/tags', ProjectTagViewSet)
 router.register(r'projects/links', LinkViewSet)
 router.register(r'projects/screens', ScreenshotViewSet)
+router.register(r'misc/images',ImageViewSet)
+router.register(r'misc/text',TextViewSet)
+router.register(r'misc/categories',MiscCategoryViewSet)
+
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'djnew1.views.home', name='home'),
