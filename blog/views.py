@@ -6,8 +6,9 @@ from .serializers import PostSerializer, TagSerializer, CategorySerializer, Comm
 from .models import Post, Tag, Category, Comment, BlogImage
 from django.contrib.auth.models import User
 # Create your views here.
-class PostPubViewSet(viewsets.ReadOnlyModelViewSet):
+class PostPubViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = Post.objects.filter(posted=True)
     def list(self, request):
         tag_name=request.QUERY_PARAMS.get('tag',None)
