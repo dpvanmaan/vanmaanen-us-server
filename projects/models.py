@@ -8,7 +8,7 @@ class Project(models.Model):
     description=models.TextField()
     icon = models.ImageField(upload_to='projects/')
     def __unicode__(self):
-        return unicode('%s'%self.name)
+        return unicode('%s'%self.title)
 class Link(models.Model):
     title=models.CharField(max_length=255)
     url=models.URLField(max_length=400)
