@@ -26,9 +26,9 @@ class ExperienceSerializer(serializers.ModelSerializer):
 
 class EducationSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Experience
+        model=Education
         fields=('id','school','grad_date','degree','description','courses')
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Experience
+        model=Course
         fields=('id','name','school')
