@@ -18,3 +18,9 @@ class Category(models.Model):
     name=models.CharField(max_length=255)
     def __unicode__(self):
         return unicode('%s'%self.name)
+class File(models.Model):
+    name=models.CharField(max_length=255)
+    filename=models.FileField(upload_to='misc/')
+    category=models.ForeignKey('Category',related_name='files')
+    def __unicode__(self):
+        return unicode('%s: %s'%(self.name,self.filename))
