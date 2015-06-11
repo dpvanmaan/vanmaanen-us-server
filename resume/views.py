@@ -13,6 +13,7 @@ class SkillLevelViewSet(viewsets.ModelViewSet):
     queryset= SkillLevel.objects.all()
     serializer_class= SkillLevelSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
+
 class ExperienceViewSet(viewsets.ModelViewSet):
     queryset= Experience.objects.all()
     serializer_class= ExperienceSerializer

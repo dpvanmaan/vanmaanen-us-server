@@ -6,17 +6,17 @@ class SkillSerializer(serializers.ModelSerializer):
     class Meta:
         model=Skill
         fields=('id','skill','exp_level')
-
+        depth=1
 class SkillLevelSerializer(serializers.ModelSerializer):
     class Meta:
         model=SkillLevel
         fields=('id','name','skills')
-        dept=1
+        depth=2
 class ExperienceCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model=ExperienceCategory
         fields=('id','name','jobs')
-        depth=1
+        depth=2
 class ExperienceSerializer(serializers.ModelSerializer):
     class Meta:
         model=Experience
@@ -28,7 +28,9 @@ class EducationSerializer(serializers.ModelSerializer):
     class Meta:
         model=Education
         fields=('id','school','grad_date','degree','description','courses')
+        depth=2
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model=Course
         fields=('id','name','school')
+        depth=1
