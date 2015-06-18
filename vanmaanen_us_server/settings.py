@@ -129,3 +129,5 @@ TEMPLATES = [
         },
     },
 ]
+
+FORCE_SCRIPT_NAME="/index.fcgi/"
