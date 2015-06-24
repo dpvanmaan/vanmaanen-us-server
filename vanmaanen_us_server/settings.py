@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['localhost:8000']
 # Application definition
 
 INSTALLED_APPS = (
+    'responsive_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

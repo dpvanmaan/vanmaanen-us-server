@@ -10,3 +10,4 @@ pytz==2015.2
 PyYAML==3.11
 requests==2.7.0
 six==1.9.0
+django-responsive-admin==0.2.8
