@@ -7,6 +7,7 @@ from blog.views import PostPubViewSet,PostPrivViewSet, TagViewSet, CategoryViewS
 from resume.views import ExperienceViewSet,SkillViewSet, SkillLevelViewSet, ExperienceCategoryViewSet, EducationViewSet, CourseViewSet
 from projects.views import ProjectViewSet,ProjectTagViewSet, LinkViewSet, ScreenshotViewSet
 from misc.views import ImageViewSet, TextViewSet, MiscCategoryViewSet, FileViewSet
+from django.views.generic import RedirectView
 router = routers.DefaultRouter()
 router.register(r'blog/posts', PostPubViewSet,base_name='post')
 router.register(r'blog/posts_admin', PostPrivViewSet,base_name='post-priv')
@@ -33,8 +34,9 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'djnew1.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-    url(r'api/',include(router.urls)),
-
+                       
+    url(r'^api/',include(router.urls)),
+    url(r'^$', RedirectView.as_view(url='/client/')),
     url(r'^admin/', include(admin.site.urls)),
     url('^markdown/', include( 'django_markdown.urls')),
     url(r'^api-auth/',include('rest_framework.urls', namespace='rest_framework')),

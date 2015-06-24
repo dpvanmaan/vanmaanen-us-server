@@ -82,10 +82,19 @@ REST_FRAMEWORK = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dpvan_main_site',
+        'USER': 'dpvan_admin',
+        'PASSWORD': 'LUzoXVVbm3',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+    #}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
