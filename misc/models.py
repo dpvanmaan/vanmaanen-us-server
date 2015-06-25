@@ -12,10 +12,14 @@ class Text(models.Model):
     body=models.TextField()
     text_type=models.CharField(max_length=50,choices=[('md','markdown'),('htm','html')])
     category=models.ForeignKey('Category',related_name='texts')
+    class Meta:
+        verbose_name_plural = "text"
     def __unicode__(self):
         return unicode('%s'%self.name)
 class Category(models.Model):
     name=models.CharField(max_length=255)
+    class Meta:
+        verbose_name_plural = "Categories"
     def __unicode__(self):
         return unicode('%s'%self.name)
 class File(models.Model):
