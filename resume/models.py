@@ -14,6 +14,8 @@ class SkillLevel(django.db.models.Model):
     return unicode('%s'%self.name)
 
 class Experience(django.db.models.Model):
+  class Meta:
+    ordering = [ 'order' ]
   job_title = django.db.models.CharField(max_length=500)
   company = django.db.models.CharField(max_length=500)
   description = django.db.models.TextField(default='')
@@ -21,7 +23,7 @@ class Experience(django.db.models.Model):
   end = django.db.models.DateField(null=True)
   current = django.db.models.BooleanField(default=False)
   location = django.db.models.CharField(max_length=500)
-  order = django.db.models.IntegerField()
+  order = django.db.models.IntegerField(unique=True)
   category = django.db.models.ForeignKey('ExperienceCategory', related_name='jobs')
 
   def __unicode__(self):
